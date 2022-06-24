@@ -1,10 +1,9 @@
 [Information]
 name = "TOML Model & Parser test"
-version = "1.2.1"
 description = "A false package to test parser."
 homepage = "https://gist.github.com/"
 
 [Data]
-files = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"
+file = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"
 script = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/install.sh"
 checksum = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
