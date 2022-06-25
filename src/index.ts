@@ -46,7 +46,7 @@ async function load(url:string) {
 
     const check_field = required.filter(value => available.includes);
 
-    if (!check_field) {
+    if (!(check_field == required)) {
         console.log(new Error("The required field (name, version, description, author, and script) aren't present in the file you submitted."))
         return;
     } 

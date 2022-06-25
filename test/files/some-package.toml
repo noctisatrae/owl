@@ -1,5 +1,6 @@
 [Information]
 name = "TOML Model & Parser test"
+version = "0.1"
 description = "A false package to test parser."
 homepage = "https://gist.github.com/"
 
