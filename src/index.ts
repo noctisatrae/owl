@@ -18,7 +18,7 @@ await new Command()
 
         const parsed = await load(pkg.load!);
         
-        console.log(`%cFound in TOML package:`, "font-weight:bold; color:green;");
+        console.log(`%cFound in TOML package:`, "font-weight:bold; color:green; font-style:underline;");
 
 
         for (let i = 0; i < parsed!.available.length; i++) {
@@ -31,8 +31,10 @@ await new Command()
             }
 
             console.log(`- %c${parsed!.available[i]}: ${values}`, "font-style:italic; color:orange;")
+        
         }
 
+        console.log("\n");
         script(parsed!.data.script);
 
     }).parse()
