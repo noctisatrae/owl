@@ -1,8 +1,6 @@
 [Information]
 name = "TOML Model & Parser test"
 version = "0.1"
-description = "A false package to test parser."
-homepage = "https://gist.github.com/"
 
 [Data]
 file = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"

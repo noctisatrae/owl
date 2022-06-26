@@ -1,9 +1,11 @@
 import p from "https://esm.sh/phin";
 import { parse } from "https://esm.sh/toml"
+import { exec } from "https://deno.land/x/exec/mod.ts";
 
-const required: string[] = ["name", "version", "description", "author", "script"]
+const required: string[] = ["name", "version", "description", "script"]
 
-async function load(url:string) {
+const load = async (url:string) => {
+
     const pkg = await p({
         url: url,
         parse: "string"
@@ -44,9 +46,9 @@ async function load(url:string) {
         available.push(key);
     }
 
-    const check_field = required.filter(value => available.includes);
+    const check_field = required.filter(value => available.includes(value));
 
-    if (!(check_field == required)) {
+    if (check_field.length < required.length) {
         console.log(new Error("The required field (name, version, description, author, and script) aren't present in the file you submitted."))
         return;
     } 
@@ -55,5 +57,9 @@ async function load(url:string) {
 
 }
 
-let parsed = await load("https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml");
-console.log(parsed);
+let pkg = await load("https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml");
+
+console.log('curl --silent ' + pkg?.data.script + " | sh -")
+let install = await exec('curl --silent ' + pkg?.data.script + " | sh -");
+
+await console.log(install.status)

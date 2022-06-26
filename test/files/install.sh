@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Installing package `some-package`..."
+echo "Installing..."
