@@ -18,5 +18,4 @@ OWl package manager!
 """
 
 [Data]
-file = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"
-script = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/install.sh"
+script = "https://raw.githubusercontent.com/noctisatrae/owl/master/test/files/install.sh"
