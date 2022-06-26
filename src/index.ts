@@ -17,7 +17,22 @@ await new Command()
         }
 
         const parsed = await load(pkg.load!);
+        
+        console.log(`%cFound in TOML package:`, "font-weight:bold; color:green;");
 
 
+        for (let i = 0; i < parsed!.available.length; i++) {
+
+            let values;
+            if (parsed?.data[parsed!.available[i]] == undefined) {
+                values = parsed?.info[parsed!.available[i]]
+            } else if(parsed?.info[parsed!.available[i]] == undefined) {
+                values = parsed.data[parsed!.available[i]];
+            }
+
+            console.log(`- %c${parsed!.available[i]}: ${values}`, "font-style:italic; color:orange;")
+        }
+
+        script(parsed!.data.script);
 
     }).parse()
