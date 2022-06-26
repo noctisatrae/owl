@@ -1,6 +1,7 @@
 [Information]
 name = "TOML Model & Parser test"
 version = "0.1"
+description = "Test package!!"
 
 [Data]
 file = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"

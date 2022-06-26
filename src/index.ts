@@ -59,7 +59,6 @@ const load = async (url:string) => {
 
 let pkg = await load("https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml");
 
-console.log('curl --silent ' + pkg?.data.script + " | sh -")
-let install = await exec('curl --silent ' + pkg?.data.script + " | sh -");
+let install = await exec(`bash -c "curl --silent  ${pkg?.data.script} | sh -"`);
 
 await console.log(install.status)
