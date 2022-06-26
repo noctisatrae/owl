@@ -1,2 +1,2 @@
 #!/bin/bash
-deno run --allow-env --allow-run --allow-net src/index.ts
+deno run --allow-env --allow-run --allow-net src/index.ts ${1}

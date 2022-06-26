@@ -1,9 +1,22 @@
 [Information]
-name = "TOML Model & Parser test"
+name = "Default test package."
 version = "0.1"
-description = "Test package!!"
+description = """
+
+OWl package manager!
+  __________
+ / ___  ___ \
+/ / @ \/ @ \ \
+\ \___/\___/ /\
+ \____\/____/||
+ /     /\\\\\//
+ |     |\\\\\\
+ \      \\\\\\
+  \______/\\\\
+   _||_||_
+    -- --
+"""
 
 [Data]
 file = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml"
 script = "https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/install.sh"
-checksum = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
