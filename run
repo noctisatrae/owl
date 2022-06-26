@@ -1,2 +1,2 @@
 #!/bin/bash
-deno run --allow-env --allow-run --allow-net src/index.ts -l https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml
+deno run --allow-env --allow-run --allow-net src/index.ts -l https://raw.githubusercontent.com/noctisatrae/owl/master/test/files/oh-my-zsh.toml
