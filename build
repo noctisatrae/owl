@@ -1,0 +1,2 @@
+#!/bin/bash
+deno compile --allow-env --allow-run --allow-net src/index.ts

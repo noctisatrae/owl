@@ -1,6 +1,8 @@
 import p from "https://esm.sh/phin";
-import { parse } from "https://esm.sh/toml"
+import { parse } from "https://esm.sh/toml";
+
 import { exec } from "https://deno.land/x/exec/mod.ts";
+import { TerminalSpinner } from "https://deno.land/x/spinners/mod.ts";
 
 const required: string[] = ["name", "version", "description", "script"]
 
@@ -59,6 +61,10 @@ const load = async (url:string) => {
 
 let pkg = await load("https://cdn.statically.io/gh/noctisatrae/owl/master/test/files/some-package.toml");
 
+let spinner = new TerminalSpinner("Installing everything!\n")
+
 let install = await exec(`bash -c "curl --silent  ${pkg?.data.script} | sh -"`);
 
-await console.log(install.status)
+if (install.status) {
+    spinner.succeed("Done!")
+}
