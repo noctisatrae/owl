@@ -5,10 +5,8 @@ export const script = async (what: string) => {
     const spinner = new TerminalSpinner("Installing everything!\n")
 
     const install = await exec(`bash -c "curl --silent  ${what} | sh -"`);
-    
-    console.log(install.status);
 
-    if (install.status) {
+    if (install.status.code != 1) {
         spinner.succeed("Done!")
     } else {
         spinner.fail("The install script returned an error code. See STDOUT for for more info.")
