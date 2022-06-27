@@ -61,7 +61,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: owl-release-1.1.tar.gz
-          asset_name: release-1.1
+          asset_name: owl-release-1.1
           tag: ${{ github.ref }}
           overwrite: true
           body: "# New version ! => 1.1"
