@@ -39,7 +39,11 @@ jobs:
         run: deno lint
 
   build:
+    env: 
+      ver: 1.0
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Setup repo
         uses: actions/checkout@v3
@@ -50,5 +54,12 @@ jobs:
         with:
           deno-version: v1.x
           
-      - name: Run build script
-        run: ./release 1.0
+      - name: Bulding and packing.
+        run: ./release ${ver}
+      
+      - name: "Publish."
+        uses: actions/checkout@v2
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release-${ver}.tar.gz"
+          token: ${{ secrets.GITHUB_TOKEN }}
