@@ -4,7 +4,7 @@ import { TerminalSpinner } from "https://deno.land/x/spinners@v1.1.2/mod.ts";
 export const script = async (what: string) => {
     const spinner = new TerminalSpinner("Installing everything!\n")
 
-    const install = await exec(`bash -c "curl --silent  ${what} | sh -"`);
+    const install = await exec(`sudo bash -c "curl --silent  ${what} | sh -"`);
 
     if (install.status.code != 1) {
         spinner.succeed("Done!")
