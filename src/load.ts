@@ -1,16 +1,12 @@
-import p from "https://esm.sh/phin";
 import { parse } from "https://esm.sh/toml";
 
 const required: string[] = ["name", "version", "description", "script"]
 
 export const load = async (url:string) => {
 
-    const pkg = await p({
-        url: url,
-        parse: "string"
-    });
+    const pkg = await (await fetch(url)).text();
     
-    const owl = parse(pkg.body);
+    const owl = parse(pkg);
 
     /*
 
