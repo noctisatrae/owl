@@ -40,11 +40,14 @@ jobs:
 
   build:
     env: 
-      ver: 1.0
+      ver: 0.1
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+  
       - name: Setup Deno
         # uses: denoland/setup-deno@v1
         uses: denoland/setup-deno@v1
@@ -52,15 +55,4 @@ jobs:
           deno-version: v1.x
           
       - name: Bulding and packing.
-        run: ./release ${ver}
-
-  push: 
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-    - uses: actions/checkout@v2
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release-${ver}.tar.gz"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        run: ./release 1.0
