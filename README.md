@@ -21,3 +21,5 @@ description = ""
 [Data]
 script = "<url to install script>"
 ```
+
+You can read some examples at `test/files`. I managed to install Zellij (awesome terminal multiplexer) just using one command!  
