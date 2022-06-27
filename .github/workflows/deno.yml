@@ -39,8 +39,6 @@ jobs:
         run: deno lint
 
   build:
-    env: 
-      ver: 0.1
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -61,8 +59,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: release-${ver}.tar.gz
-          asset_name: release-${1.0}
+          file: release-1.0.tar.gz
+          asset_name: release-1.0
           tag: ${{ github.ref }}
           overwrite: true
           body: "NEW VERSION"
