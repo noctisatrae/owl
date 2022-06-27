@@ -39,6 +39,7 @@ jobs:
         run: deno lint
 
   build:
+    # please work.
     runs-on: ubuntu-latest
     permissions:
       contents: write
