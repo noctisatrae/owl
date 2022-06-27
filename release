@@ -4,4 +4,4 @@
 ./build src/index.ts aarch64-apple-darwin ${1}
 ./build src/index.ts x86_64-unknown-linux-gnu ${1}
 
-tar -czf release-${1}.tar.gz bin
+tar -czf owl-release-${1}.tar.gz owl
