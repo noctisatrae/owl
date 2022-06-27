@@ -5,4 +5,4 @@ description = "🙃 A delightful community-driven (with 2,000+ contributors) fra
 
 [Data]
 file = "https://github.com/zellij-org/zellij.git"
-script = ""
+script = "https://raw.githubusercontent.com/noctisatrae/owl/master/test/files/zellij.sh"
