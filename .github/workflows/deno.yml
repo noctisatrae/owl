@@ -46,17 +46,9 @@ jobs:
   
       - name: Setup Deno
         # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
+        uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
           
       - name: Run build script
-        run: ./build src/index.ts
-
-      - name: Upload to release binaries
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/owl/owl/owl
-          asset_name: owl
-          tag: ${{ github.ref }}
+        run: ./release 1.0

@@ -1,2 +1,2 @@
 #!/bin/bash
-deno compile --output owl --allow-env --allow-run --allow-net ${1}
+deno compile --output bin/owl-${3}-${2} --target ${2} --allow-env --allow-run --allow-net ${1}
