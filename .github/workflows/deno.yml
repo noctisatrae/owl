@@ -52,3 +52,11 @@ jobs:
           
       - name: Run build script
         run: ./build src/index.ts
+
+      - name: Upload to release binaries
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./owl
+          asset_name: owl
+          tag: ${{ github.ref }}
